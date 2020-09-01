@@ -31,7 +31,7 @@ for i in range(5):
     y2v=[eval(y2s) for x in xv]
     #plt.plot(xv, y1v, '-b')
     plt.plot(xv, y2v, '-r')
-plt.title('Stonks')
+plt.title('CHEBYSHEV')
 plt.xlabel('x', color='#1C2833')
 plt.ylabel('y', color='#1C2833')
 plt.grid()
