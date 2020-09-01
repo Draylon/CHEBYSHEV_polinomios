@@ -22,17 +22,24 @@ def chebyshev_segunda_ordem(n):
         return "2*x"
     return "2*x*("+chebyshev_segunda_ordem(n-1)+")-("+chebyshev_segunda_ordem(n-2)+")"
 
-xv = np.linspace(-1,1,30)
+
+xv = np.linspace(-1,1,35)
 for i in range(5):
-    y1s=chebyshev_primeira_ordem(i)
-    y2s=chebyshev_segunda_ordem(i)
-    print(y2s)
-    y1v=[eval(y1s) for x in xv]
-    y2v=[eval(y2s) for x in xv]
-    #plt.plot(xv, y1v, '-b')
-    plt.plot(xv, y2v, '-r')
+    y1s=chebyshev_primeira_ordem(i) #pegando a função de primeira ordem do chebyshev como string
+    y2s=chebyshev_segunda_ordem(i)  #esse aqui é o de segunda ordem
+    
+    #print(y1s)
+    #print(y2s)
+    #printar no console
+    
+    y1v=[eval(y1s) for x in xv] # interpretando as funções, e gerando uma lista de pontos pra plotar
+    y2v=[eval(y2s) for x in xv] # aqui, com a segunda ordem
+    plt.plot(xv, y1v, '-b') # joga os pontos da primeira ordem
+    plt.plot(xv, y2v, '-r') # aqui os da segunda ordem
 plt.title('CHEBYSHEV')
 plt.xlabel('x', color='#1C2833')
 plt.ylabel('y', color='#1C2833')
 plt.grid()
 plt.show()
+
+# >.<'
